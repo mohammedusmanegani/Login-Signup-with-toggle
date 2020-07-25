@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Bootstrap CSS Alpha 5.0.0 -->
+    <link rel="stylesheet" href="assets/bootstrap-5.0.0-alpha1-dist/css/bootstrap.min.css">
+
+    <!-- Costome CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <div class="login-container" id="loginbox">
+        <h2 class="text-center mb-3">Login</h2>
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Your Email ID" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="invalid-feedback">
+                    Please enter a valid Email ID.
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password"
+                    required>
+                <div class="invalid-feedback">
+                    Password Cannot be empty.
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-block btn-primary">Login</button>
+            </div>
+            <div class="text-center">
+                <p>New to us? <a href="#"
+                        onClick="$('#loginbox').hide(); $('#signupbox').show(); changePageTitleToSignup()">Signup</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <div class="signup-container m-3" id="signupbox" style="display: none;">
+        <h2 class="text-center mb-3">Signup</h2>
+        <form class="needs-validation" novalidate>
+            <div class="row mb-3">
+                <div class="col-lg-6">
+                    <label for="exampleInputEmail1" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Your First Name" required>
+                    <div class="invalid-feedback">
+                        First Name Cannot be empty.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter Your Last Name" required>
+                    <div class="invalid-feedback">
+                        Last Name Cannot be empty.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter Your Email ID" required>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="invalid-feedback">
+                    Please enter a valid Email ID.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password"
+                    required>
+                <div class="invalid-feedback">
+                    Password Cannot be empty.
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-lg-6">
+                    <label for="validationTooltip04" class="form-label">Gender</label>
+                    <select class="form-select" id="validationTooltip04" required>
+                        <option selected disabled value="">Choose Your Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Rather not Say.</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select you Gender.
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <label for="exampleInputPassword1" class="form-label">DOB</label>
+                    <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Enter Your DOB"
+                        required>
+                    <div class="invalid-feedback">
+                        DOB Cannot be empty.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-block btn-primary mt-4">Signup</button>
+            </div>
+            <div class="text-center">
+                <p>Already have an account? <a href="#"
+                        onClick="$('#loginbox').show(); $('#signupbox').hide(); changePageTitleToLogin()">Login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- Jquery -->
+    <script src="assets/jquery-3.5.1.min.js"></script>
+    <!-- Bundle JS Contains Popper JS -->
+    <script src="assets/bootstrap-5.0.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+    <!-- Change The Title To Signup -->
+    <script type="text/javascript">
+        function changePageTitleToLogin() {
+            newPageTitle = 'Login';
+            document.title = newPageTitle;
+        }
+        function changePageTitleToSignup() {
+            newPageTitle = 'Signup';
+            document.title = newPageTitle;
+        } 
+    </script>
+</body>
+
+</html>
